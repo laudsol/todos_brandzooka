@@ -45,5 +45,7 @@ is your friend, feel free to search the web for anything you think might help yo
 ##Tips
 
 1) Testing is always a good idea
+
 2) Commit often
+
 3) You're better off taking a stab at all of the problems versus leaving them untouched
