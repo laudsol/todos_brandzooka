@@ -1,4 +1,4 @@
-#### Todos Assesment
+# Todos Assesment
 
 So what we have here is a very simple todos app, built using React for the view layer, and Redux as the state container. If you're unfamiliar
 with either of these technologies, a little bit of googling should enlighten you nicely. All of the Javascript is written in ES6.
