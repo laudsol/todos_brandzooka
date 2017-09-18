@@ -8,7 +8,12 @@ let AddTodo = ({ dispatch }) => {
 
   return (
     <div className='addToDoBox'>
-      <form onSubmit={e => {
+      <div className='titleBox'>
+        Do it!
+      </div>
+      <form
+        className='formBox'
+        onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
           return

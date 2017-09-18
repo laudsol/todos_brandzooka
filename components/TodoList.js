@@ -5,14 +5,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 const TodoList = props => (
-  <ul>
-    {props.todos.map(todo => (
-      <Todo
-        key={todo.id}
-        {...todo}
-      />
-    ))}
-  </ul>
+  <div
+    className='listBox'
+  >
+    <ul>
+      {props.todos.map(todo => (
+        <Todo
+          key={todo.id}
+          {...todo}
+        />
+      ))}
+    </ul>
+  </div>
 );
 
 TodoList.propTypes = {

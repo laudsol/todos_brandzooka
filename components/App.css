@@ -4,15 +4,18 @@ lightgrey : #e6e7e8
 midnight: #102e50
 pink: #ee5e8f
 
-
 */
 
-
-body{
+.listBox{
+  margin-left: 15%;
 }
 
 .listItem{
-  border: gray solid 1px;
+  height: 20px;
+  float: left;
+  width: 70%;
+  margin-bottom: 3px;
+  border: grey solid 1px;
   border-radius: 5px;
   background-color: #e6e7e8;
 }
@@ -20,13 +23,35 @@ body{
 .itemText{
 }
 
+ul{
+  list-style: none;
+}
+
 .deletebtn{
+  margin-left: 10px;
+  margin-bottom: 3px;
+  width: 50px;
+  height: 22px;
+  border-radius: 2px;
+  border: none;
   background-color: #102e50;
   color: white;
 }
 
+.titleBox{
+  margin-left: 2%;
+  float: left;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: serif;
+}
+
+.formBox{
+  margin-left: 15%;
+}
+
 .inputBox{
-  margin-left: 5%;
   height: 25px;
   border: white solid 1px;
   width: 20%;
@@ -52,8 +77,21 @@ body{
 }
 
 .filterBox{
-  border: grey solid 1px;
-  border-radius: 5px;
-  background-color: lightgrey;
-  color: blue;
+  height: 35px;
+  padding-top: 15px;
+  padding-left: 2%;
+  border-radius: 2px;
+  background-color: #102e50;
+  color: lightgrey;
+  font-size: 20px;
+}
+
+.filterText:enabled{
+  text-decoration: none;
+  color: #ee5e8f;
+}
+
+.filterText:disabled{
+  text-decoration: none;
+  color: lightgrey;
 }

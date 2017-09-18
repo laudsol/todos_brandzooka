@@ -10,23 +10,24 @@ const Todo = ({toggleTodo, deleteTodo, onClick, completed, text, id }) => {
     <li>
       <div
         className='listItem'
+        style={{
+          backgroundColor: completed ? '#ee5e8f': '#e6e7e8',
+          color: completed ? 'white': 'black',
+        }}
+          onClick={() => toggleTodo(id)}
         >
         <div
           className='itemText'
-          onClick={() => toggleTodo(id)}
-          style={{
-            textDecoration: completed ? 'line-through' : 'none'
-          }}
           >
             {text}
         </div>
-        <button
-          onClick={() => deleteTodo(id)}
-          className='deletebtn'
-          >
+      </div>
+      <button
+        onClick={() => deleteTodo(id)}
+        className='deletebtn'
+        >
           delete
         </button>
-      </div>
     </li>
     )
 }
