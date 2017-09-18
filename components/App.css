@@ -1,3 +1,31 @@
 body{
-  background-color: red; 
+  background-color: yellow;
+}
+
+.listItem{
+  border: gray solid 1px;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
+.itemText{
+}
+
+.deletebtn{
+  background-color: red;
+}
+
+.inputBox{
+  background-color: green;
+}
+
+.submitBtn{
+  background-color: orange;
+}
+
+.filterBox{
+  border: grey solid 1px;
+  border-radius: 5px;
+  background-color: lightgrey;
+  color: blue;
 }

@@ -2,24 +2,32 @@ import React, { PropTypes } from 'react'
 import { deleteTodo, toggleTodo } from '../actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import './App.css';
+
 
 const Todo = ({toggleTodo, deleteTodo, onClick, completed, text, id }) => {
   return (
     <li>
       <div
-        onClick={() => toggleTodo(id)}
-        style={{
-          textDecoration: completed ? 'line-through' : 'none'
-        }}
+        className='listItem'
         >
-          {text}
+        <div
+          className='itemText'
+          onClick={() => toggleTodo(id)}
+          style={{
+            textDecoration: completed ? 'line-through' : 'none'
+          }}
+          >
+            {text}
+        </div>
+        <button
+          onClick={() => deleteTodo(id)}
+          className='deletebtn'
+          >
+          delete
+        </button>
       </div>
-      <button
-        onClick={() => deleteTodo(id)}
-        >
-        delete
-      </button>
-      </li>
+    </li>
     )
 }
 

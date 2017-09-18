@@ -27,7 +27,6 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ]
     case 'DELETE_TODO':
-
       const filteredTodos = state.filter((t) => {
         return t.id !== action.id;
       });
