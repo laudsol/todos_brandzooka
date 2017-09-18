@@ -6,6 +6,11 @@ pink: #ee5e8f
 
 */
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .listBox{
   margin-left: 15%;
 }
