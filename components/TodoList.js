@@ -21,8 +21,6 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
   }).isRequired).isRequired,
-  onTodoClick: PropTypes.func.isRequired,
-  onDeleteClick: PropTypes.func.isRequired,
 }
 
 function mapStateToProps({ todos }) {
