@@ -6,10 +6,6 @@ const todo = (state, action) => {
         text: action.text,
         completed: false
       }
-    case 'DELETE_TODO':
-      return {
-        id: action.id
-      }
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
@@ -31,12 +27,20 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ]
     case 'DELETE_TODO':
-      return state.filter(t =>
-        t !== action.id
-      )
+
+      console.log('before delete', state);
+
+      const filteredTodos = state.filter((t) => {
+        return t.id !== action.id;
+      });
+
+      return filteredTodos;
+
+      console.log('after delete', filteredTodos);
     case 'TOGGLE_TODO':
-      return state.map(t =>
+      return state.map(t => (
         todo(t, action)
+        )
       )
     default:
       return state
