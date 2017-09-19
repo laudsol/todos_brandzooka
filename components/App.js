@@ -8,7 +8,7 @@ import './App.css';
 const App = () => (
   <div>
     <AddTodo />
-    <TodoList />
+    <VisibleTodoList />
     <Footer />
   </div>
 )
