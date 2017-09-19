@@ -1,20 +1,12 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 import visibilityFilter from './visibilityFilter'
-
-const auth = (state, action) => {
-  switch (action.type) {
-    case 'LOGIN_SUCCESS':
-
-      return action.auth;
-    default:
-      return state;
-  }
-}
+import setFacebookUser from './fblogin'
 
 const todoApp = combineReducers({
   todos,
-  visibilityFilter
+  visibilityFilter,
+  setFacebookUser
 })
 
 
