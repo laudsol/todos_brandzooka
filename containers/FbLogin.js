@@ -7,15 +7,9 @@ import '../components/App.css';
 
 let FacebookLogin = (state) => {
 
-  // state = {
-  //   isFetchingUser: false
-  // }
-
-  // let{token, user} = this.ownProps;
-  // let{isFetchingUser} = this.state;
   return (
     <button>
-      {/* {JSON.stringify(state)} */} 
+      {/* {JSON.stringify(state)} */}
       {!state.token &&
         <div>Click here to login</div>
       }

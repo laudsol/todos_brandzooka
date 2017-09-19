@@ -8,7 +8,7 @@ import './App.css';
 
 const App = () => (
   <div>
-    <FacebookLogin />
+    {/* <FacebookLogin /> */}
     <AddTodo />
     <VisibleTodoList />
     <Footer />

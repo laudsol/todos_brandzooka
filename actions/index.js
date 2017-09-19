@@ -28,6 +28,22 @@ export const deleteTodo = (id) => {
   }
 }
 
+export const facebookUserData = (responseFacebook) => {
+  console.log(responseFacebook);
+  return {
+    type: 'FACEBOOK_USER_DATA',
+    responseFacebook
+  }
+}
+
+// export const setAccessToken = (token) => {
+//   return {
+//     type: 'SET_ACCESS_TOKEN',
+//     token
+//   }
+// };
+
+
 const FB = window.FB;
 
 const login = (dispatch) => {

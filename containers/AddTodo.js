@@ -1,4 +1,5 @@
 import React from 'react'
+import Login from '../components/FbLoginBtn'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import '../components/App.css';
@@ -10,6 +11,9 @@ let AddTodo = ({ dispatch }) => {
     <div className='addToDoBox'>
       <div className='titleBox'>
         Do it!
+      </div>
+      <div className='loginBox'>
+      <Login />
       </div>
       <form
         className='formBox'
