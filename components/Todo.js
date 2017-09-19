@@ -1,25 +1,46 @@
 import React, { PropTypes } from 'react'
+import { deleteTodo, toggleTodo } from '../actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import './App.css';
 
-const Todo = ({ onClick, completed, text }) => (
-  <li>
-    <div
-      onClick={onClick}
-      style={{
-        textDecoration: completed ? 'line-through' : 'none'
-      }}
-    >
-      {text}
-    </div>
-    <div class='delete'>
-      delete
-    </div>
-  </li>
-)
 
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+const Todo = ({toggleTodo, deleteTodo, onClick, completed, text, id }) => {
+  return (
+    <li>
+      <div
+        className='listItem'
+        style={{
+          backgroundColor: completed ? '#ee5e8f': '#e6e7e8',
+          color: completed ? 'white': 'black',
+        }}
+          onClick={() => toggleTodo(id)}
+        >
+        <div
+          className='itemText'
+          >
+            {text}
+        </div>
+      </div>
+      <button
+        onClick={() => deleteTodo(id)}
+        className='deletebtn'
+        >
+          delete
+        </button>
+    </li>
+    )
 }
 
-export default Todo
+Todo.propTypes = {
+  deleteTodo: PropTypes.func.isRequired,
+  toggleTodo: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ deleteTodo, toggleTodo }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Todo);

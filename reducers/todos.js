@@ -12,7 +12,7 @@ const todo = (state, action) => {
       }
 
       return Object.assign({}, state, {
-        completed: !state.completed
+        completed: !state.completed,
       })
     default:
       return state
@@ -26,9 +26,17 @@ const todos = (state = [], action) => {
         ...state,
         todo(undefined, action)
       ]
+    case 'DELETE_TODO':
+      const filteredTodos = state.filter((t) => {
+        return t.id !== action.id;
+      });
+
+      return filteredTodos;
+
     case 'TOGGLE_TODO':
-      return state.map(t =>
+      return state.map(t => (
         todo(t, action)
+        )
       )
     default:
       return state
