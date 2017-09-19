@@ -1,4 +1,4 @@
-const setFacebookUser = (state = {token: null}, action) => {
+const setFacebookUser = (state = {token: 12345, user: 'me'}, action) => {
   switch(action.type){
     case 'SET_ACCESS_TOKEN':
     return {

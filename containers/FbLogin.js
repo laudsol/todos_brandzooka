@@ -1,40 +1,44 @@
 import React from 'react'
 import axios from 'axios';
+import thunk from 'redux-thunk';
 import { connect } from 'react-redux'
 import {setAccessToken, setUser} from '../actions'
 import '../components/App.css';
 
-const FacebookLogin = (state, ownProps) => {
+let FacebookLogin = (state) => {
 
   // state = {
   //   isFetchingUser: false
   // }
 
-  render(){
-    let{token, user} = this.ownProps;
-    let{ isFetchingUser} = this.state;
-    return (
-      <div>
-        {!token &&
-          <div>Click here to login</div>
-        }
-        {isFetchingUser && <div>loading...</div>}
-        {token && user &&
-          <div>Welcome back {user.name} </div>
-        }
-      </div>
-    );
-  }
+  // let{token, user} = this.ownProps;
+  // let{isFetchingUser} = this.state;
+  return (
+    <button>
+      {/* {JSON.stringify(state)} */} 
+      {!state.token &&
+        <div>Click here to login</div>
+      }
+      {/* {isFetchingUser && <div>loading...</div>} */}
+      {state.token && state.user &&
+        <div>Welcome back {state.user} </div>
+      }
+    </button>
+  );
 }
 
-const mapStateToProps = state => ({
-  token: state.app.token,
-  user: state.app.user
-});
+const mapStateToProps = (state) => {
+  return {
+    token: state.setFacebookUser.token,
+    user: state.setFacebookUser.user
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   setAccessToken: token => dispatch(setAccessToken(token)),
   setUser: user => dispatch(setUser(user))
 });
 
-export default(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(FacebookLogin)
+
+ // FacebookLogin
