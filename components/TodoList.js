@@ -31,4 +31,5 @@ function mapStateToProps({ todos }) {
   return { todos };
 }
 
-export default connect(mapStateToProps, null)(TodoList);
+// export default connect(mapStateToProps, null)(TodoList);
+export default TodoList;

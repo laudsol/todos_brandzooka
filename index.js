@@ -22,3 +22,6 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
+
+// redux thunk middleware, axios
