@@ -9,17 +9,7 @@ import { loadState, saveState} from './localStorage'
 import throttle from 'lodash/throttle'
 
 const persistedState = loadState();
-const store = createStore(todoApp, persistedState
-  // {
-  // todos: [
-  //   { id: 0, text: 'foo', completed: false },
-  //   { id: 1, text: 'bar', completed: false },
-  //   { id: 2, text: 'asdfasdf', completed: true },
-  //   { id: 3, text: 'asldkfjasdf', completed: true },
-  //   { id: 4, text: 'sdfsdf', completed: false },
-  // ]
-  // }
-)
+const store = createStore(todoApp, persistedState)
 
 store.subscribe(throttle(()=>{
   saveState({todos: store.getState().todos});
@@ -31,6 +21,3 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-
-
-// redux thunk middleware, axios
