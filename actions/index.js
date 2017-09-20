@@ -1,8 +1,10 @@
-let nextTodoId = 0
+// hashes ids as to not duplicate 0's when creating items using lcoal storate
+import { v4 } from 'node-uuid';
+
 export const addTodo = (text) => {
   return {
     type: 'ADD_TODO',
-    id: nextTodoId++,
+    id: v4(),
     text
   }
 }
@@ -36,13 +38,15 @@ export const facebookUserData = (responseFacebook) => {
   }
 }
 
+
+// -------CODE BELOW NOT FUNCTIONING - PENDING FACEBOOK FUNCTIONALITY-----------
+
 // export const setAccessToken = (token) => {
 //   return {
 //     type: 'SET_ACCESS_TOKEN',
 //     token
 //   }
 // };
-
 
 const FB = window.FB;
 

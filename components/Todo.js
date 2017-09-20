@@ -22,6 +22,7 @@ const Todo = ({toggleTodo, deleteTodo, onClick, completed, text, id }) => {
             {text}
         </div>
       </div>
+      {/* Button to delete item */}
       <button
         onClick={() => deleteTodo(id)}
         className='deletebtn'

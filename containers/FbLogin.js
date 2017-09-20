@@ -5,15 +5,17 @@ import { connect } from 'react-redux'
 import {setAccessToken, setUser} from '../actions'
 import '../components/App.css';
 
+//----------------NOTHING BELOW IS FUNCTIONAL--------------------------------
+
 let FacebookLogin = (state) => {
 
   return (
     <button>
-      {/* {JSON.stringify(state)} */}
+      {JSON.stringify(state)}
       {!state.token &&
         <div>Click here to login</div>
       }
-      {/* {isFetchingUser && <div>loading...</div>} */}
+      {isFetchingUser && <div>loading...</div>}
       {state.token && state.user &&
         <div>Welcome back {state.user} </div>
       }
@@ -34,5 +36,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FacebookLogin)
-
- // FacebookLogin
